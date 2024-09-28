@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('BG.gif'); /* Use local GIF for background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.75); /* Dark tint */
+        }
+
+        .credits-container {
+            position: relative;
+            text-align: center;
+            background-color: rgba(40, 40, 40, 0.9); /* Dark background */
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #00bfff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #ff6347; /* Changes color when hovered */
+        }
+
+        .credits-item {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="credits-container">
+        <h1>Credits</h1>
+        <div class="credits-item">
+            <p>Creator: <strong>Cod // Menace</strong></p>
+        </div>
+        <div class="credits-item">
+            <p>Helper: <strong>ChatGPT</strong></p>
+        </div>
+        <div class="credits-item">
+            <p>Background Image Source: 
+                <a href="https://www.reddit.com/r/outrun/comments/6qvlau/valenbergs_pixel_art_gifs_are_mesmerizing/" target="_blank">
+                    Valenberg's Pixel Art (Reddit)
+                </a>
+            </p>
+        </div>
+        <div class="credits-item">
+            <p>Background Music Source: 
+                <a href="https://www.youtube.com/watch?v=6-qxkvPs98k" target="_blank">
+                    YouTube
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

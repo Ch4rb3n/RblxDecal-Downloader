@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Cod.ico" type="image/x-icon"> <!-- Favicon link -->
+    <title>Roblox Decal Downloader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('BG.gif'); /* Use local GIF file name */
+            background-size: cover; /* Adjusts the background image to cover the entire viewport */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the background from repeating */
+            position: relative; /* Allows overlay positioning */
+            overflow: hidden; /* Prevents overflow of elements */
+        }
+        .overlay {
+            position: absolute; /* Position overlay over the body */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8); /* Darker tint with transparency */
+        }
+        .container {
+            position: relative; /* Positioning for child elements */
+            text-align: center;
+            background-color: rgba(40, 40, 40, 0.9); /* Dark background for the container */
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1; /* Keeps container above overlay */
+            color: #ffffff; /* White text color */
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            background-color: #555; /* Dark background for input */
+            color: #ffffff; /* White text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #4b4b4b; /* Button background */
+            color: white; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+        }
+        button:hover {
+            background-color: #9c9c9c; /* Darker blue on hover */
+        }
+        h2 {
+            font-size: 18px; /* Smaller title size */
+            margin-top: 10px; /* Space between titles */
+            color: #ffffff; /* White title color */
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ffffff; /* Link color */
+            text-decoration: none; /* Remove underline from links */
+        }
+        a:hover {
+            color: #9c9c9c; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div> <!-- Darker tint overlay -->
+    <div class="container">
+        <h1>Roblox Decal Downloader</h1>
+        <h2>Made by Cod // Menace</h2> <!-- Smaller title -->
+        <input type="text" id="assetIdInput" placeholder="Enter Asset ID" oninput="updateUrl()">
+        <button id="downloadButton" onclick="downloadAsset()">Download</button>
+
+        <!-- Hyperlinks added below the download button -->
+        <a href="tutorial.html" target="_blank">How to Use / Tutorial</a>
+        <a href="credits.html" target="_blank">Credits</a>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="BGM.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Function to play audio on user interaction
+        function playMusic() {
+            const bgMusic = document.getElementById("bgMusic");
+            bgMusic.volume = 0.5; // Set volume to 50%
+            bgMusic.play(); // Play the audio
+        }
+
+        function updateUrl() {
+            const inputField = document.getElementById("assetIdInput");
+            // Remove any non-numeric characters
+            inputField.value = inputField.value.replace(/[^0-9]/g, '');
+        }
+
+        function downloadAsset() {
+            const assetId = document.getElementById("assetIdInput").value;
+            if (assetId) {
+                window.location.href = `https://assetdelivery.roblox.com/v1/asset/?id=${assetId}`;
+            } else {
+                alert("Please enter a valid Asset ID.");
+            }
+        }
+
+        // Play music on first interaction
+        document.body.addEventListener("click", playMusic);
+        document.body.addEventListener("keydown", playMusic);
+    </script>
+</body>
+</html>
